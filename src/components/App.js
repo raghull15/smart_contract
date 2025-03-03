@@ -30,7 +30,7 @@ function App() {
         <nav className="nav">
   <a href="/home.html" target="_blank">Home</a> 
   <a href="/contact.html" target="_blank">Contact us</a>
-  <a href="/about.html" target="_blank">About</a>
+  <a href="/about.html" target="_blank">Generative Ai</a>
 </nav>
         <div className="btn">
           <button className="signup-btn" onClick={handleSignupClick}>Sign up</button>

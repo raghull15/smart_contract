@@ -1,0 +1,81 @@
+.costs-clauses-container {
+    font-family: sans-serif;
+    padding: 20px;
+    margin-top: 40px; 
+    border: 2px solid #ccc;
+    background-color: #eee1e1; 
+    border-radius: 10px;
+  }
+  .costs-section,
+  .clauses-section {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  .costs-section h2,
+  .clauses-section h2,
+  .utilities-expenses h3,
+  .landlord-improvements h3 {
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
+  
+  .utilities-expenses p {
+    margin-bottom: 10px;
+  }
+  
+  .utilities-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .utilities-header,
+  .utilities-row {
+    display: table-row;
+  }
+  
+  .utilities-header-item,
+  .utilities-row-item {
+    display: table-cell;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .utilities-header {
+    font-weight: bold;
+  }
+  
+  .utilities-row-item img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  
+  .improvements-options {
+    margin-top: 20px;
+  }
+  
+  .improvement-button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: #f0f0f0;
+  }
+  
+  .improvement-button.active {
+    background-color: #ffcc80;
+    border-color: #333;
+  }
+  
+  .note {
+    font-size: 24px;
+    color: #555;
+    margin-top: 10px;
+  }

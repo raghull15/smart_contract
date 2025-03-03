@@ -1,0 +1,183 @@
+
+
+.rental-guide-container {
+  font-family: sans-serif;
+  display: flex;
+  font-size: 10px;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 40px;
+  border-color: #555;
+  border-width: 2px;
+  border-style: solid;
+  background-color: #999595;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 80px; 
+}
+
+.nav a {
+  margin: 0 15px;
+  font-size: 35px; 
+  text-decoration: none;
+  color: #333;
+}
+
+.btn {
+  display: flex;
+}
+
+.signup-btn,
+.login-btn {
+  margin-left: 10px;
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #181717;
+  border: none;
+  border-radius: 5px;
+  border: 2px solid;
+  cursor: pointer;
+}
+
+.signup-btn:hover,
+.login-btn:hover {
+  background-color: #f5a850;
+}
+
+.main-content {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.image-container {
+  margin-bottom: 20px;
+}
+
+.house-keys-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-content .title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-container.expanded .form {
+  width: 50%;
+}
+
+.form {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form h2 {
+  margin-bottom: 20px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form .submit-btn,
+.form .close-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form .submit-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.form .submit-btn:hover {
+  background-color: #218838;
+}
+
+.form .close-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.form .close-btn:hover {
+  background-color: #c82333;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  flex-grow: 1;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.house-keys-image {
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.text-content {
+  flex: 2;
+  text-align: left;
+  padding-left: 50px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #555;
+}

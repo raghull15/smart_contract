@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+import LeaseForm from './components/leaseform';
+import PartiesProperty from './components/PartiesProperty';
+import LeaseTerms from './components/LeaseTerms';
+import CostsClauses from './components/CostsClauses';
+import FinalDetailsDownload from './components/FinalDetailsDownload';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    <LeaseForm/>
+    <PartiesProperty/>
+    <LeaseTerms/>
+    <CostsClauses/>
+    <FinalDetailsDownload/>
   </React.StrictMode>
 );
 

@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
-import './LeaseTerms.css'; // Create this CSS file
+import './LeaseTerms.css';
 
 function LeaseTerms() {
   const [leaseEndType, setLeaseEndType] = useState('End on set date');
-  const [earlyPossession, setEarlyPossession] = useState(false);
 
   const handleLeaseEndTypeChange = (type) => {
     setLeaseEndType(type);
-  };
-
-  const handleEarlyPossessionChange = (value) => {
-    setEarlyPossession(value);
   };
 
   return (
@@ -22,13 +17,13 @@ function LeaseTerms() {
           <div className="lease-end-type">
             <p>The lease will:</p>
             <button
-              className={`type-button ${leaseEndType === 'End on set date' ? 'active' : ''}`}
+              className="type-button"
               onClick={() => handleLeaseEndTypeChange('End on set date')}
             >
               End on set date
             </button>
             <button
-              className={`type-button ${leaseEndType === 'Have no set end date' ? 'active' : ''}`}
+              className="type-button"
               onClick={() => handleLeaseEndTypeChange('Have no set end date')}
             >
               Have no set end date
@@ -49,23 +44,6 @@ function LeaseTerms() {
               <label htmlFor="landlordPhone">Phone:</label>
               <input type="tel" id="landlordPhone" />
             </div>
-          </div>
-          <div className="early-possession">
-            <p>
-              Will the tenant be able to move in before the lease start date? (early possession)
-            </p>
-            <button
-              className={`type-button ${earlyPossession ? 'active' : ''}`}
-              onClick={() => handleEarlyPossessionChange(true)}
-            >
-              Yes
-            </button>
-            <button
-              className={`type-button ${!earlyPossession ? 'active' : ''}`}
-              onClick={() => handleEarlyPossessionChange(false)}
-            >
-              No
-            </button>
           </div>
           <p className="note">Remember the current location is Chennai, Tamil Nadu, India.</p>
         </div>

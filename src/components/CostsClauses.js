@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CostsClauses.css'; 
+import './CostsClauses.css';
 
 function CostsClauses() {
   const [electricity, setElectricity] = useState(null);
@@ -225,19 +225,19 @@ function CostsClauses() {
           <p>Will the landlord be required to make any improvements to the property?</p>
           <div className="improvements-options">
             <button
-              className={`improvement-button ${landlordImprovements === 'specifyNow' ? 'active' : ''}`}
+              className="improvement-button" // Removed active class
               onClick={() => handleLandlordImprovementsChange('specifyNow')}
             >
               Yes specify now
             </button>
             <button
-              className={`improvement-button ${landlordImprovements === 'attachedList' ? 'active' : ''}`}
+              className="improvement-button" // Removed active class
               onClick={() => handleLandlordImprovementsChange('attachedList')}
             >
               Yes specify in an attached list
             </button>
             <button
-              className={`improvement-button ${landlordImprovements === 'no' ? 'active' : ''}`}
+              className="improvement-button" // Removed active class
               onClick={() => handleLandlordImprovementsChange('no')}
             >
               No

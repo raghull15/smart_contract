@@ -1,33 +1,13 @@
-import React, { useState } from 'react';
-import './PartiesProperty.css'; 
+import React from 'react';
+import './PartiesProperty.css';
 
 function PartiesProperty() {
-  const [landlordType, setLandlordType] = useState('Individual');
-
-  const handleLandlordTypeChange = (type) => {
-    setLandlordType(type);
-  };
-
   return (
     <div className="parties-property-container">
       <div className="parties-section">
         <h2>Parties</h2>
         <div className="landlord-details">
           <h3>Landlord Details</h3>
-          <div className="type-selection">
-            <button
-              className={`type-button ${landlordType === 'Individual' ? 'active' : ''}`}
-              onClick={() => handleLandlordTypeChange('Individual')}
-            >
-              Individual
-            </button>
-            <button
-              className={`type-button ${landlordType === 'Company' ? 'active' : ''}`}
-              onClick={() => handleLandlordTypeChange('Company')}
-            >
-              Company / Organization
-            </button>
-          </div>
           <div className="form-grid">
             <div className="form-group">
               <label htmlFor="landlordName">Name:</label>

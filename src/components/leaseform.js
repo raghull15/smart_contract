@@ -7,7 +7,7 @@ function LeaseForm() {
     { id: 'generalInfo', label: 'General Info', status: 'pending' },
     { id: 'parties', label: 'Parties', status: 'pending' },
     { id: 'property', label: 'Property', status: 'pending' },
-    { id: 'terms', label: 'Terms', status: 'pending' },
+    { id: 'terms', label: 'Terms', status: 'pending'},
     { id: 'costs', label: 'Costs', status: 'pending' },
     { id: 'clauses', label: 'Clauses', status: 'pending' },
     { id: 'finalDetails', label: 'Final Details', status: 'pending' },

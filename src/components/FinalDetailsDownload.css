@@ -3,17 +3,17 @@
   padding: 20px;
   background-color: #eee1e1;
   border-radius: 10px;
-  border: 2px solid #ccc;
+  border: 1px solid #1a1717;
 }
 
 .final-details-section,
 .download-section,
 .about-us-section {
-  margin-bottom: 30px; /* Increased margin-bottom for more separation */
+  margin-bottom: 30px;
   font-size: 18px;
   align-items: center;
   margin-top: 40px;
-  border: 2px solid #ccc;
+  border: 1px solid #131010;
   padding: 20px;
 }
 
@@ -40,15 +40,17 @@
   margin-right: 10px;
   font-size: 14px;
   border-color: #333;
-  border: 1px solid #ccc;
+  border: 2px solid #1b1919;
   border-radius: 5px;
   cursor: pointer;
   background-color: #f0f0f0;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out; 
 }
 
-.renewal-button.active {
-  background-color: #ffcc80;
-  border-color: #333;
+.renewal-button:hover {
+  background-color: #f5984d;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .download-button-container {
@@ -57,49 +59,51 @@
 
 .download-button {
   padding: 5px 15px;
-  background-color: #ffcc80;
+  background-color: #f7f3ed;
   border-color: #333;
   font-size: 20px;
   border-radius: 5px;
   cursor: pointer;
+  
+}
+
+.download-button:hover {
+  background-color: #f59e25;
+  
+ 
 }
 
 .about-us-section {
-  /* Styles for the "About us" section to group its content */
   margin-bottom: 30px;
   font-size: 18px;
   align-items: center;
   margin-top: 40px;
-  border: 2px solid #ccc;
+  border: 1px solid #221d1d;
   padding: 20px;
 }
 
 .about-content {
-  /* Styles to arrange the content within "About us" */
   display: flex;
-  flex-direction: row; 
-  font-weight: 46px;/* Arrange items in a row (side-by-side) */
-  justify-content: space-between; /* Distribute space between items */
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .legal-docs-info {
-  /* Styles for the logo and its description */
   margin-right: 20px;
-   /* Add space between logo and contact info */
 }
 
 .contact-info {
-  /* Styles for contact info section */
-  margin-right: 20px; /* Add space between contact info and social media */
+  margin-right: 20px;
 }
 
 .legal-docs-logo {
   width: 100px;
-  
 }
+
 .logo-text {
-  font-size: 22px; /* Adjust the font size as needed */
+  font-size: 22px;
 }
+
 .social-icons {
   display: flex;
 }
@@ -117,7 +121,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
-  font-size: 20px; /* Reduced font size */
+  font-size: 20px;
 }
 
 .footer-links a {
@@ -129,4 +133,26 @@
 .note {
   font-size: 0.9em;
   color: #555;
+}
+#controls {
+  margin-top: 10px;
+}
+
+#clear-button, #save-button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 2px solid #2b2727; 
+  border-radius: 4px; 
+  background-color: #f0f0f0; 
+  transition: background-color 0.3s ease; 
+}
+
+#clear-button:hover, #save-button:hover {
+  background-color: #f7a429; 
+}
+
+#clear-button:active, #save-button:active {
+  background-color: #d0d0d0; 
+  transform: translateY(1px); 
 }

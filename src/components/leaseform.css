@@ -2,7 +2,7 @@
     font-family: sans-serif;
     margin-bottom: 30px;
     font-family: sans-serif;
-    border: 2px solid #ccc; 
+    border: 1px solid #1d1919; 
     border-radius: 8px;
   }
   
@@ -100,11 +100,12 @@
   .form-group label {
     margin-bottom: 5px;
     font-size: 20px;
+    
   }
   
   .form-group select {
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 2px solid #0c0a0a;
     border-radius: 4px;
   }
   

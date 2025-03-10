@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lease Terms</title>
+  <link rel="stylesheet" href="LeaseTerms.css" />
+</head>
+<body>
+  <div class="lease-terms-container">
+    <div class="terms-section">
+      <h2>Terms</h2>
+      <div class="lease-term">
+        <h3>Lease Term</h3>
+        <div class="lease-end-type">
+          <p>The lease will:</p>
+          <button class="type-button" onclick="handleLeaseEndTypeChange('End on set date')">
+            End on set date
+          </button>
+          <button class="type-button" onclick="handleLeaseEndTypeChange('Have no set end date')">
+            Have no set end date
+          </button>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="leaseStartDate">Lease start date:</label>
+            <input type="date" id="leaseStartDate" />
+          </div>
+          <div class="form-group" id="leaseEndDateGroup">
+            <label for="leaseEndDate">Date lease ends:</label>
+            <input type="date" id="leaseEndDate" />
+          </div>
+          <div class="form-group">
+            <label for="landlordPhone">Phone:</label>
+            <input type="tel" id="landlordPhone" />
+          </div>
+        </div>
+        <p class="note">Remember the current location is Chennai, Tamil Nadu, India.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Set the initial lease end type
+    var leaseEndType = 'End on set date';
+
+    function handleLeaseEndTypeChange(type) {
+      leaseEndType = type;
+      var leaseEndDateGroup = document.getElementById('leaseEndDateGroup');
+      // Show or hide the lease end date input based on the selected type
+      if (leaseEndType === 'End on set date') {
+        leaseEndDateGroup.style.display = 'block';
+      } else {
+        leaseEndDateGroup.style.display = 'none';
+      }
+    }
+
+    // Initialize the form based on the default lease end type when the document is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      handleLeaseEndTypeChange(leaseEndType);
+    });
+  </script>
+</body>
+</html>

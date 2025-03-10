@@ -1,0 +1,65 @@
+.document-cards-container {
+    display: flex;
+    background-color: #eee1e1; /* Light pink background */
+    justify-content: center; /* Center the cards horizontally */
+    align-items: center; /* Center the cards vertically */
+    min-height: 80vh; /* Ensure the container takes up the full viewport height */
+    gap: 20px; /* Adds spacing between the card and the image */
+    padding: 20px; /* Adds padding around the container */
+  }
+  
+  .card {
+    width: 550px; /* Adjust card width as needed */
+    height: 280px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 70px; /* Adds margin between cards */
+    text-align: center;
+    font-size: 18px; /* Center text within the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a more pronounced shadow on hover */
+  }
+  
+  .card-content {
+    text-align: center;
+  }
+  
+  .card h2 {
+    margin-bottom: 10px;
+  }
+  
+  .create-document-btn {
+    background-color: #eeede9; /* Example button color */
+    color: #000;
+    margin-top: 30px;
+    padding: 10px 20px;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .create-document-btn:hover {
+    background-color: #ddb347; /* Slightly darker shade of yellow on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to make the button pop */
+  }
+  
+  .image {
+    /* You can add styles here to control the image container itself 
+       e.g., width, height, border, etc. */
+  }
+  
+  .image img {
+    width: 500px; /* Sets the width of the image */
+    height: 350px; /* Sets the height of the image */
+    border-radius: 10px; /* Adds rounded corners to the image */
+  
+  }
+  
+  
+  

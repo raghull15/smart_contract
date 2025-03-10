@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './LeaseTerms.css';
+//import './LeaseTerms.css';
 
 function LeaseTerms() {
   const [leaseEndType, setLeaseEndType] = useState('End on set date');

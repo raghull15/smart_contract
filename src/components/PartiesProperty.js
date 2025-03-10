@@ -1,5 +1,5 @@
 import React from 'react';
-import './PartiesProperty.css';
+//import './PartiesProperty.css';
 
 function PartiesProperty() {
   return (

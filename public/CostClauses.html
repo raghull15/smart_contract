@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Costs &amp; Clauses</title>
+  <link rel="stylesheet" href="CostsClauses.css" />
+</head>
+<body>
+  <div class="costs-clauses-container">
+    <div class="costs-section">
+      <h2>Costs</h2>
+      <div class="utilities-expenses">
+        <h3>Utilities and Other Expenses</h3>
+        <p>Who is responsible for paying the following utilities and service charges?</p>
+        <div class="utilities-table">
+          <div class="utilities-header">
+            <div class="utilities-header-item"></div>
+            <div class="utilities-header-item">Tenant Pays Direct</div>
+            <div class="utilities-header-item">Tenant Pays Landlord</div>
+            <div class="utilities-header-item">Landlord Pays</div>
+            <div class="utilities-header-item">Do Not Specify</div>
+          </div>
+          <!-- Electricity Row -->
+          <div class="utilities-row">
+            <div class="utilities-row-item">
+              <div class="utility-icon"></div>
+              <span>Electricity</span>
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="electricity" value="tenantDirect" 
+                onchange="handleUtilityChange('electricity', 'tenantDirect')" />
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="electricity" value="tenantLandlord" 
+                onchange="handleUtilityChange('electricity', 'tenantLandlord')" />
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="electricity" value="landlord" 
+                onchange="handleUtilityChange('electricity', 'landlord')" />
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="electricity" value="doNotSpecify" 
+                onchange="handleUtilityChange('electricity', 'doNotSpecify')" />
+            </div>
+          </div>
+          <!-- Water Row -->
+          <div class="utilities-row">
+            <div class="utilities-row-item">
+              <div class="utility-icon"></div>
+              <span>Water</span>
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="water" value="tenantDirect" 
+                onchange="handleUtilityChange('water', 'tenantDirect')" />
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="water" value="tenantLandlord" 
+                onchange="handleUtilityChange('water', 'tenantLandlord')" />
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="water" value="landlord" 
+                onchange="handleUtilityChange('water', 'landlord')" />
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="water" value="doNotSpecify" 
+                onchange="handleUtilityChange('water', 'doNotSpecify')" />
+            </div>
+          </div>
+          <!-- Sewer Row -->
+          <div class="utilities-row">
+            <div class="utilities-row-item">
+              <div class="utility-icon"></div>
+              <span>Sewer</span>
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="sewer" value="tenantDirect" 
+                onchange="handleUtilityChange('sewer', 'tenantDirect')" />
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="sewer" value="tenantLandlord" 
+                onchange="handleUtilityChange('sewer', 'tenantLandlord')" />
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="sewer" value="landlord" 
+                onchange="handleUtilityChange('sewer', 'landlord')" />
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="sewer" value="doNotSpecify" 
+                onchange="handleUtilityChange('sewer', 'doNotSpecify')" />
+            </div>
+          </div>
+          <!-- Other Expenses Row -->
+          <div class="utilities-row">
+            <div class="utilities-row-item">
+              <div class="utility-icon"></div>
+              <span>Other expenses</span>
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="otherExpenses" value="tenantDirect" 
+                onchange="handleUtilityChange('otherExpenses', 'tenantDirect')" />
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="otherExpenses" value="tenantLandlord" 
+                onchange="handleUtilityChange('otherExpenses', 'tenantLandlord')" />
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="otherExpenses" value="landlord" 
+                onchange="handleUtilityChange('otherExpenses', 'landlord')" />
+            </div>
+            <div class="utilities-row-item">
+              <input type="radio" name="otherExpenses" value="doNotSpecify" 
+                onchange="handleUtilityChange('otherExpenses', 'doNotSpecify')" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clauses-section">
+      <h2>Clauses</h2>
+      <div class="landlord-improvements">
+        <h3>Landlord Improvements</h3>
+        <p>Will the landlord be required to make any improvements to the property?</p>
+        <div class="improvements-options">
+          <button class="improvement-button" 
+                  onclick="handleLandlordImprovementsChange('specifyNow')">
+            Yes specify now
+          </button>
+          <button class="improvement-button" 
+                  onclick="handleLandlordImprovementsChange('attachedList')">
+            Yes specify in an attached list
+          </button>
+          <button class="improvement-button" 
+                  onclick="handleLandlordImprovementsChange('no')">
+            No
+          </button>
+        </div>
+      </div>
+    </div>
+    <p class="note">Remember the current location is Chennai, Tamil Nadu, India.</p>
+  </div>
+
+  <script>
+    // Initialize state variables
+    var state = {
+      electricity: null,
+      water: null,
+      sewer: null,
+      otherExpenses: null,
+      landlordImprovements: null
+    };
+
+    function handleUtilityChange(utility, value) {
+      state[utility] = value;
+      console.log('Updated', utility, 'to:', value);
+      // The radio buttons reflect their state automatically.
+    }
+
+    function handleLandlordImprovementsChange(value) {
+      state.landlordImprovements = value;
+      console.log('Landlord Improvements set to:', value);
+      // Optionally, you could add visual feedback here.
+    }
+  </script>
+</body>
+</html>

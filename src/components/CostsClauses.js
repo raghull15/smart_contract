@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CostsClauses.css';
+//import './CostsClauses.css';
 
 function CostsClauses() {
   const [electricity, setElectricity] = useState(null);
@@ -48,7 +48,7 @@ function CostsClauses() {
             </div>
             <div className="utilities-row">
               <div className="utilities-row-item">
-                <img src="/electricity.png" alt="Electricity" className="utility-icon" />
+                < div className="utility-icon" />
                 <span>Electricity</span>
               </div>
               <div className="utilities-row-item">
@@ -90,7 +90,7 @@ function CostsClauses() {
             </div>
             <div className="utilities-row">
               <div className="utilities-row-item">
-                <img src="/water.png" alt="Water" className="utility-icon" />
+                <div className="utility-icon" />
                 <span>Water</span>
               </div>
               <div className="utilities-row-item">
@@ -132,7 +132,7 @@ function CostsClauses() {
             </div>
             <div className="utilities-row">
               <div className="utilities-row-item">
-                <img src="/sewer.png" alt="Sewer" className="utility-icon" />
+                <div className="utility-icon" />
                 <span>Sewer</span>
               </div>
               <div className="utilities-row-item">
@@ -174,7 +174,7 @@ function CostsClauses() {
             </div>
             <div className="utilities-row">
               <div className="utilities-row-item">
-                <img src="/other.png" alt="Other Expenses" className="utility-icon" />
+                <div className="utility-icon" />
                 <span>Other expenses</span>
               </div>
               <div className="utilities-row-item">

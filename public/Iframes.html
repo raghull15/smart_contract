@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document Creation</title>
+
+  <link rel="stylesheet" href="leaseform.css">
+  <link rel="stylesheet" href="PartiesProperty.css">
+  <link rel="stylesheet" href="LeaseTerms.css">
+  <link rel="stylesheet" href="CostsClauses.css">
+  <link rel="stylesheet" href="FinalDetailsDownload.css">
+</head>
+<body>
+  <h1><a href="$">Back</a></h1>
+  
+  <div id="content"></div>
+
+  <script>
+    const htmlFiles = [
+      'LeaseForm.html',
+      'PartiesProperty.html',
+      'LeaseTerm.html',
+      'CostClauses.html',
+      'FinalDetailsDownload.html'
+    ];
+    
+    const contentDiv = document.getElementById('content');
+    
+    // Load each HTML file and append its content into the container
+    htmlFiles.forEach(file => {
+      fetch(file)
+        .then(response => response.text())
+        .then(html => {
+          const section = document.createElement('section');
+          section.innerHTML = html;
+          contentDiv.appendChild(section);
+        })
+        .catch(err => console.error('Error loading ' + file, err));
+    });
+  </script>
+</body>
+</html>

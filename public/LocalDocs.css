@@ -1,0 +1,247 @@
+.rental-guide-container {
+  font-family: sans-serif;
+  display: flex;
+  background-color: #eee1e1;
+  font-size: 10px;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 40px;
+  border-color: #f7cc0e;
+  border-width: 2px;
+  border-style: solid;
+  background-color: #96908e;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.nav a {
+  margin: 0 15px;
+  font-size: 35px;
+  text-decoration: none;
+  color: #333;
+}
+
+.btn {
+  display: flex;
+}
+
+.signup-btn,
+.login-btn {
+  margin-left: 10px;
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #181717;
+  border: none;
+  border-radius: 5px;
+  border: 2px solid;
+  cursor: pointer;
+}
+
+.signup-btn:hover,
+.login-btn:hover {
+  background-color: #f5a850;
+  transform: scale(1.05);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px;
+  flex-grow: 1;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.house-keys-image {
+  max-width: 350px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.house-keys-image:hover {
+  transform: scale(1.1);
+}
+
+.text {
+  flex: 2;
+  text-align: left;
+  margin-top: -45px;
+  padding-left: 40px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-top: 80px;
+  padding-left: 20px;
+}
+
+.description {
+  font-size: 1.3rem;
+  padding-left: 20px;
+  line-height: 1.6;
+  color: #555;
+  margin-top: -1px;
+}
+
+.search-bar {
+  display: flex;
+  width: 100%; /* Make search bar width responsive */
+  max-width: 650.5px; /* Limit maximum width */
+  border: 1px solid #1a1616;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: -40px;
+}
+
+.search-bar:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar input {
+  flex: 1;
+  width: 545px;; /* Adjust input width based on button size */
+  padding: 10px;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar input:hover {
+  background-color: #ece9e5;
+}
+
+.search-btn {
+  background-color: #f88818;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-container.expanded .form {
+  width: 50%;
+}
+
+.form {
+  background-color: #f3f2f0;
+  padding: 40px;
+  border: 2px solid;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form h2 {
+  margin-bottom: 20px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #070606;
+  border-radius: 5px;
+}
+
+.form .submit-btn,
+.form .close-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form .submit-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.form .submit-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.form .close-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.form .close-btn:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+#send-button:hover,
+#upload-button:hover {
+  background-color: #e68433;
+  transform: scale(1.05);
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateY(40px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.image-container,
+.text-content {
+  animation: slideIn 1s ease;
+}
+
+.image-container:hover,
+.text-content:hover {
+  transition: transform 0.3s ease;
+}

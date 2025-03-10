@@ -1,31 +1,14 @@
 import React, { useState, useRef } from 'react';
-import './App.css';
+//import './App.css';
+
 
 function App() {
-  const [showLoginForm, setShowLoginForm] = useState(false);
-  const [showSignupForm, setShowSignupForm] = useState(false);
   const [chatMessages, setChatMessages] = useState([
-    { text: 'Welcome to the Legal Document AI Chatbot!', sender: 'bot' },
+    { text: 'Welcome to the Legal Document AI Chatbot!', sender: 'Ai' },
   ]);
   const [userInput, setUserInput] = useState('');
   const chatContainerRef = useRef(null);
   const fileInputRef = useRef(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); 
-  const [isSignedUp, setIsSignedUp] = useState(false); 
-  const handleLoginClick = () => {
-    setShowLoginForm(true);
-    setShowSignupForm(false);
-  };
-
-  const handleSignupClick = () => {
-    setShowSignupForm(true);
-    setShowLoginForm(false);
-  };
-
-  const handleCloseForm = () => {
-    setShowLoginForm(false);
-    setShowSignupForm(false);
-  };
 
   const handleInputChange = (e) => {
     setUserInput(e.target.value);
@@ -47,13 +30,10 @@ function App() {
     const responses = {
       'hello': 'Hello! How can I help you?',
       'contract': "Sure, let's start generating your contract. What type of contract do you need?",
-      'lease': 'Okay, a lease agreement. Please provide the property address and lease term.',
-      'agreement': 'Please specify the type of agreement you need.',
-      'default': "I'm still learning. Could you please be more specific?",
     };
 
     const lowerMessage = message.toLowerCase();
-    let response = responses[lowerMessage] || responses['default'];
+    let response = responses[lowerMessage] || 'Sorry, I did not understand that.';
 
     setTimeout(() => {
       setChatMessages((prevMessages) => [
@@ -85,23 +65,9 @@ function App() {
     });
   };
 
-  const handleLoginSubmit = (e) => {
-    e.preventDefault(); 
-    setIsLoggedIn(true);
-    setShowLoginForm(false);
-   
-  };
-
-  const handleSignupSubmit = (e) => {
-    e.preventDefault(); 
-    setIsSignedUp(true);
-    setShowSignupForm(false);
-    
-  };
-
   const handleLogout = () => {
-    setIsLoggedIn(false);
-    setIsSignedUp(false);
+    alert('You have logged out.');
+    // Add additional logic here if required
   };
 
   return (
@@ -109,28 +75,18 @@ function App() {
       <header className="header">
         <div className="logo">
           <img src="/image/tvk.jpg" alt="Legal Docs Logo" />
-          <span className="logo-text">LegalDocs</span>
+          <span className="logo-text">LegalDocs®</span>
         </div>
         <nav className="nav">
           <a href="#" target="_blank">Home</a>
-          <a href="contact.html" target="_blank">Contact us</a>
+          <a href="ContactForm.html" >Contact us</a>
           <a href="#" onClick={scrollToBottom}>About us</a>
         </nav>
         <div className="btn">
-          {isLoggedIn || isSignedUp ? (
-            <button className="login-btn" onClick={handleLogout}>
-              Logout
-            </button>
-          ) : (
-            <>
-              <button className="signup-btn" onClick={handleSignupClick}>
-                Sign up
-              </button>
-              <button className="login-btn" onClick={handleLoginClick}>
-                Login
-              </button>
-            </>
-          )}
+          {/* Always show the Logout button */}
+          <button className="logout-btn" onClick={handleLogout}>
+            Logout
+          </button>
         </div>
       </header>
 
@@ -178,44 +134,6 @@ function App() {
           </div>
         </div>
       </main>
-
-      {showLoginForm && (
-        <div className="form-container">
-          <div className="form">
-            <h2>Login</h2>
-            <form onSubmit={handleLoginSubmit}>
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
-              <button type="submit" className="submit-btn">
-                Login
-              </button>
-            </form>
-            <button className="close-btn" onClick={handleCloseForm}>
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-
-      {showSignupForm && (
-        <div className="form-container">
-          <div className="form">
-            <h2>Sign Up</h2>
-            <form onSubmit={handleSignupSubmit}>
-              <input type="text" placeholder="Enter your name" />
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
-              <input type="password" placeholder="Confirm Password" />
-              <button type="submit" className="submit-btn">
-                Sign Up
-              </button>
-            </form>
-            <button className="close-btn" onClick={handleCloseForm}>
-              Close
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

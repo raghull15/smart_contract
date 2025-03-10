@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Details &amp; Download</title>
+  <link rel="stylesheet" href="FinalDetailsDownload.css" />
+</head>
+<body>
+  <div class="final-details-download-container">
+    <div class="final-details-section">
+      <h2>Final Details</h2>
+      <div class="lease-renewal">
+        <h3>Lease Renewal</h3>
+        <p>Will the tenant have the option to renew the lease?</p>
+        <div class="renewal-options">
+          <button class="renewal-button" onclick="handleLeaseRenewalChange('No option specified')">
+            No option specified
+          </button>
+          <button class="renewal-button" onclick="handleLeaseRenewalChange('Yes, revise standard clause')">
+            Yes, revise standard clause
+          </button>
+          <button class="renewal-button" onclick="handleLeaseRenewalChange('Yes, same terms')">
+            Yes, same terms
+          </button>
+        </div>
+      </div>
+      <div class="e-signature-container">
+        <div class="e-signature" style="display: flex;">
+          <div style="margin-right:450px;">
+            <h3>Client</h3>
+            <canvas id="signature-pad-1" width="400" height="200" 
+              style="border: 2px dashed black; cursor: crosshair;"
+              onmousedown="startDrawing1(event)"
+              onmousemove="draw1(event)"
+              onmouseup="stopDrawing1()"
+              onmouseout="stopDrawing1()"
+            ></canvas>
+            <div id="controls-1" style="margin-top:10px;">
+              <button id="clear-button-1" onclick="clearSignature1()">Clear</button>
+              <button id="save-button-1" onclick="saveSignature1()">Save</button>
+            </div>
+            <img id="signature-image-1" src="" alt="Signature 1" 
+              style="margin-top:20px; max-width:100%; display:none;" />
+          </div>
+          <div>
+            <h3>Owner</h3>
+            <canvas id="signature-pad-2" width="400" height="200" 
+              style="border: 2px dashed black; cursor: crosshair;"
+              onmousedown="startDrawing2(event)"
+              onmousemove="draw2(event)"
+              onmouseup="stopDrawing2()"
+              onmouseout="stopDrawing2()"
+            ></canvas>
+            <div id="controls-2" style="margin-top:10px;">
+              <button id="clear-button-2" onclick="clearSignature2()">Clear</button>
+              <button id="save-button-2" onclick="saveSignature2()">Save</button>
+            </div>
+            <img id="signature-image-2" src="" alt="Signature 2" 
+              style="margin-top:10px; max-width:100%; display:none;" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="download-section">
+      <h2>Download</h2>
+      <div class="leased-property">
+        <h3>Leased Property</h3>
+        <p>To download your Rental Agreement, click download button</p>
+        <div class="download-button-container">
+          <button class="download-button">Download</button>
+        </div>
+      </div>
+    </div>
+
+   
+  <script>
+    // State variables
+    var state = {
+      leaseRenewalOption: 'No option specified',
+      signatureDataUrl1: null,
+      signatureDataUrl2: null,
+      isDrawing1: false,
+      isDrawing2: false,
+      lastX1: 0,
+      lastY1: 0,
+      lastX2: 0,
+      lastY2: 0,
+    };
+
+    // Lease Renewal Option
+    function handleLeaseRenewalChange(option) {
+      state.leaseRenewalOption = option;
+      console.log('Lease Renewal Option changed to:', option);
+    }
+
+    // Signature 1 Functions
+    function startDrawing1(e) {
+      var canvas = document.getElementById('signature-pad-1');
+      if (!canvas) return;
+      var rect = canvas.getBoundingClientRect();
+      state.isDrawing1 = true;
+      state.lastX1 = e.clientX - rect.left;
+      state.lastY1 = e.clientY - rect.top;
+    }
+
+    function draw1(e) {
+      if (!state.isDrawing1) return;
+      var canvas = document.getElementById('signature-pad-1');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var rect = canvas.getBoundingClientRect();
+      ctx.beginPath();
+      ctx.moveTo(state.lastX1, state.lastY1);
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      ctx.lineTo(x, y);
+      ctx.strokeStyle = '#000';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      state.lastX1 = x;
+      state.lastY1 = y;
+    }
+
+    function stopDrawing1() {
+      state.isDrawing1 = false;
+    }
+
+    function clearSignature1() {
+      var canvas = document.getElementById('signature-pad-1');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      state.signatureDataUrl1 = null;
+      var img = document.getElementById('signature-image-1');
+      if (img) {
+        img.src = '';
+        img.style.display = 'none';
+      }
+    }
+
+    function saveSignature1() {
+      var canvas = document.getElementById('signature-pad-1');
+      if (!canvas) return;
+      state.signatureDataUrl1 = canvas.toDataURL('image/png');
+      var img = document.getElementById('signature-image-1');
+      if (img) {
+        img.src = state.signatureDataUrl1;
+        img.style.display = 'block';
+      }
+    }
+
+    // Signature 2 Functions
+    function startDrawing2(e) {
+      var canvas = document.getElementById('signature-pad-2');
+      if (!canvas) return;
+      var rect = canvas.getBoundingClientRect();
+      state.isDrawing2 = true;
+      state.lastX2 = e.clientX - rect.left;
+      state.lastY2 = e.clientY - rect.top;
+    }
+
+    function draw2(e) {
+      if (!state.isDrawing2) return;
+      var canvas = document.getElementById('signature-pad-2');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var rect = canvas.getBoundingClientRect();
+      ctx.beginPath();
+      ctx.moveTo(state.lastX2, state.lastY2);
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      ctx.lineTo(x, y);
+      ctx.strokeStyle = '#000';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      state.lastX2 = x;
+      state.lastY2 = y;
+    }
+
+    function stopDrawing2() {
+      state.isDrawing2 = false;
+    }
+
+    function clearSignature2() {
+      var canvas = document.getElementById('signature-pad-2');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      state.signatureDataUrl2 = null;
+      var img = document.getElementById('signature-image-2');
+      if (img) {
+        img.src = '';
+        img.style.display = 'none';
+      }
+    }
+
+    function saveSignature2() {
+      var canvas = document.getElementById('signature-pad-2');
+      if (!canvas) return;
+      state.signatureDataUrl2 = canvas.toDataURL('image/png');
+      var img = document.getElementById('signature-image-2');
+      if (img) {
+        img.src = state.signatureDataUrl2;
+        img.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

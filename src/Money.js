@@ -1,0 +1,75 @@
+import React from 'react';
+import './Money.css'; // Import your CSS file
+
+function ManageEmployee() {
+  return (
+    <div>
+      <div className="document">
+        <div className="card1">
+          <div className="card-content1">
+            <h2>Lending Money</h2>
+            <p>
+              A Loan Agreement sets out the terms of a loan between individuals,
+              corporations, or between an individual and a corporation. Lending
+              money doesn't have to be risky. In this guide, learn about the
+              documents that protect you and ensure repayment.
+            </p>
+            <button className="create-document-btn">Create Document</button>
+          </div>
+        </div>
+        
+        <div className="image1">
+          <img src="/image/tvk.jpg" className="house1" style={{ width: '500px', height: '350px' }} />
+        </div>
+      </div>
+      <div className="about-us-section">
+        <h2>About us</h2>
+        <div className="about-content">
+          <div className="legal-docs-info">
+            <img src="/legal.png" className="legal-docs-logo"  />
+            <b className="logo-text">legal docs logo</b>
+            <p>We are passionate about creating and reviewing legal documents using AI technology.</p>
+          </div>
+          <div className="contact-info">
+            <h3>Email &amp; Phone</h3>
+            <p>support@legaldocs.com</p>
+            <p>9499954629</p>
+            <p>(Mon to Fri, From 10am to 6pm)</p>
+          </div>
+          <div className="social-media">
+            <h3>Social Media</h3>
+            <p>Follow us on social media to find out the latest updates.</p>
+            <div className="social-icons">
+              <a href="https://www.instagram.com/dhanushh15/" className="social-icon">
+                <img src="/instagram.png" alt="Instagram" />
+              </a>
+              <a href="#" className="social-icon">
+                <img src="/facebook.png" alt="Facebook" />
+              </a>
+              <a href="#" className="social-icon">
+                <img src="/linkedin.png" alt="LinkedIn" />
+              </a>
+              <a href="#" className="social-icon">
+                <img src="/twitter.png" alt="Twitter" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Section */}
+      <div className="footer">
+        <div className="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms and Conditions</a>
+        </div>
+        <div className="copyright">
+          Copyright 2025 by Legaldocs.com. All Rights Reserved
+        </div>
+      </div>
+    </div>
+      
+  );
+}
+
+export default ManageEmployee;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './leaseform.css'; 
+//import './leaseform.css'; 
 
 function LeaseForm() {
   const [location, setLocation] = useState('Tamil Nadu');

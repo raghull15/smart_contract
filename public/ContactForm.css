@@ -1,0 +1,112 @@
+.contact-container {
+    display: flex;
+    border: 1px solid;
+    justify-content: center;
+    align-items: center;
+    min-height: 130vh; /* Adjust as needed */
+    background-color: #eee1e1; /* Light background */
+    padding: 20px;
+}
+
+.left-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    max-width: 400px; /* Adjust as needed */
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-content {
+    width: 500px; /* Form width remains the same */
+    background-color: #fff;
+    border: 1px solid;
+    height: 500px;
+    padding: 20px; /* Reduced padding for a more compact form */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth pop transition */
+}
+
+.form-content:hover {
+    transform: scale(1.02); /* Slight pop effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.form-content h2 {
+    text-align: center;
+    margin-bottom: 5px; /* Reduced margin for a more compact layout */
+    font-size: 32px; /* Reduced font size to shorten height */
+    color: #080404;
+}
+
+.form-content p {
+    text-align: center;
+    margin-bottom: 10px; /* Reduced margin for compact spacing */
+    color: #666;
+}
+
+.form-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-content input,
+.form-content textarea {
+    padding: 8px; /* Reduced padding for smaller inputs */
+    margin-bottom: 10px; /* Reduced spacing between inputs */
+    border: 1px solid #0e0b0b;
+    border-radius: 5px;
+    font-size: 14px; /* Slightly smaller font size */
+    background-color: #f0f0f0;
+    transition: box-shadow 0.3s ease;
+}
+
+.form-content input:focus,
+.form-content textarea:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(245, 157, 43, 0.5); /* Glow effect on focus */
+}
+
+.form-content textarea {
+    resize: vertical;
+    min-height: 100px; /* Reduced textarea height */
+}
+
+.form-content button {
+    background-color: white;
+    color: #000;
+    padding: 10px 15px; /* Reduced button size */
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 14px; /* Slightly smaller font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-content button:hover {
+    background-color: #f59d2b;
+    transform: scale(1.05); /* Add a slight scale effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}

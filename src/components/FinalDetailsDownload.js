@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import './FinalDetailsDownload.css';
+//import './FinalDetailsDownload.css';
 
 function FinalDetailsDownload() {
   const [leaseRenewalOption, setLeaseRenewalOption] = useState('No option specified');

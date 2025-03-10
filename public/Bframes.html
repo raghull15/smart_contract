@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="LocalDocs.css">
+  <link rel="stylesheet" href="DocumentCards1.css">
+  <link rel="stylesheet" href="ManageEmployee1.css">
+  <link rel="stylesheet" href="Construction1.css">
+  <link rel="stylesheet" href="Money1.css">
+</head>
+<body>
+ 
+  <div id="content"></div>
+
+  <script>
+    const htmlFiles = [
+      'LocalDocs.html',
+      'DocumentCards.html',
+      'ManageEmployee.html',
+      'Construction.html',
+      'Money.html'
+    ];
+    
+    const contentDiv = document.getElementById('content');
+    
+    // Load each HTML file and append its content into the container
+    htmlFiles.forEach(file => {
+      fetch(file)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Failed to fetch ${file}: ${response.status} ${response.statusText}`);
+          }
+          return response.text();
+        })
+        .then(html => {
+          const section = document.createElement('section');
+          section.innerHTML = html;
+          contentDiv.appendChild(section);
+        })
+        .catch(err => console.error('Error loading ' + file, err));
+    });
+  </script>
+</body>
+</html>

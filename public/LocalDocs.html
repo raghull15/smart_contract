@@ -1,0 +1,182 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LegalDocs - Local Docs</title>
+  <link rel="stylesheet" href="LocalDocs.css">
+</head>
+<body>
+  <div class="rental-guide-container">
+    <header class="header">
+      <div class="logo">
+        <img src="/image/tvk.jpg" alt="Legal Docs Logo">
+        <span class="logo-text">LegalDocs®</span>
+      </div>
+      <nav class="nav">
+        <a href="Home.html">Ai</a>
+        <a href="ContactForm.html">Contact us</a>
+        <a href="#">About us</a>
+      </nav>
+      <div class="btn" id="auth-buttons">
+        <button class="signup-btn" id="signup-btn">Sign up</button>
+        <button class="login-btn" id="login-btn">Login</button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="image-container">
+        <img src="/image/tvk.jpg" class="house-keys-image" alt="Legal Documents Illustration">
+      </div>
+      <div class="text">
+        <h1 class="title">LEGAL DOCUMENTS</h1>
+        <p class="description" style="margin-bottom: 100px;">
+          Do-it-Yourself platform for making documents online. The process of creating official documentation is now made simple, quick, and affordable.
+        </p>
+        <div class="search-bar">
+          <form id="search-form">
+            <input type="text" placeholder="Search..." id="search-input">
+            <button type="submit" class="search-btn">Search</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    
+    <div id="documentCards" style="margin-top: 50px; padding: 20px; background-color: #f9f9f9;">
+      <h2>Document Cards</h2>
+      <p>Details about document cards.</p>
+    </div>
+    
+    <div id="lendingMoney" style="margin-top: 50px; padding: 20px; background-color: #e0f7fa;">
+      <h2>Money Lending Documents</h2>
+      <p>Details about money lending agreements.</p>
+    </div>
+
+   
+    <div id="login-form" class="form-container" style="display: none;">
+      <div class="form">
+        <h2>Login</h2>
+        <form id="login-submit">
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <button class="close-btn" id="close-login">Close</button>
+      </div>
+    </div>
+
+    <div id="signup-form" class="form-container" style="display: none;">
+      <div class="form">
+        <h2>Sign Up</h2>
+        <form id="signup-submit">
+          <input type="text" placeholder="Enter your name" required>
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
+          <input type="password" placeholder="Confirm Password" required>
+          <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+        <button class="close-btn" id="close-signup">Close</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const loginBtn = document.getElementById("login-btn");
+        const signupBtn = document.getElementById("signup-btn");
+        const closeLogin = document.getElementById("close-login");
+        const closeSignup = document.getElementById("close-signup");
+        const loginForm = document.getElementById("login-form");
+        const signupForm = document.getElementById("signup-form");
+        const loginSubmit = document.getElementById("login-submit");
+        const signupSubmit = document.getElementById("signup-submit");
+        const authButtons = document.getElementById("auth-buttons");
+
+        let isAuthenticated = false;
+
+        // Toggle Login Form
+        loginBtn.addEventListener("click", function() {
+          loginForm.style.display = "block";
+          signupForm.style.display = "none";
+        });
+
+        // Toggle Signup Form
+        signupBtn.addEventListener("click", function() {
+          signupForm.style.display = "block";
+          loginForm.style.display = "none";
+        });
+
+        // Close Login Form
+        closeLogin.addEventListener("click", function() {
+          loginForm.style.display = "none";
+        });
+
+        // Close Signup Form
+        closeSignup.addEventListener("click", function() {
+          signupForm.style.display = "none";
+        });
+
+        // Handle Login Submission
+        loginSubmit.addEventListener("submit", function(e) {
+          e.preventDefault();
+          isAuthenticated = true;
+          updateAuthButtons();
+          loginForm.style.display = "none";
+        });
+
+        // Handle Signup Submission
+        signupSubmit.addEventListener("submit", function(e) {
+          e.preventDefault();
+          isAuthenticated = true;
+          updateAuthButtons();
+          signupForm.style.display = "none";
+        });
+
+        function updateAuthButtons() {
+          if (isAuthenticated) {
+            authButtons.innerHTML = '<button class="login-btn" id="logout-btn">Logout</button>';
+            
+            // Attach event listener for Logout
+            document.getElementById("logout-btn").addEventListener("click", function() {
+              isAuthenticated = false;
+              updateAuthButtons();
+            });
+          } else {
+            authButtons.innerHTML = `
+              <button class="signup-btn" id="signup-btn">Sign up</button>
+              <button class="login-btn" id="login-btn">Login</button>
+            `;
+
+            // **Reattach event listeners after updating innerHTML**
+            document.getElementById("login-btn").addEventListener("click", function() {
+              loginForm.style.display = "block";
+              signupForm.style.display = "none";
+            });
+
+            document.getElementById("signup-btn").addEventListener("click", function() {
+              signupForm.style.display = "block";
+              loginForm.style.display = "none";
+            });
+          }
+        }
+
+        // Handle Search
+        document.getElementById("search-form").addEventListener("submit", function(e) {
+          e.preventDefault();
+          let searchQuery = document.getElementById("search-input").value.trim().toLowerCase();
+
+          if (searchQuery === "documentcards") {
+            document.getElementById("documentCards").scrollIntoView({ behavior: "smooth" });
+          } else if (searchQuery === "money") {
+            document.getElementById("lendingMoney").scrollIntoView({ behavior: "smooth" });
+          } else {
+            alert("No matching results found!");
+          }
+        });
+
+      });
+    </script>
+
+  </div>
+</body>
+</html>

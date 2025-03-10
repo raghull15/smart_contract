@@ -1,0 +1,60 @@
+.document {
+    display: flex;
+    background-color: #eee1e1; /* Light pink background */
+    align-items: center; /* Center the cards vertically */
+    justify-content: center; /* Center the cards horizontally */
+    min-height: 80vh; /* Ensure the container takes up the full viewport height */
+    gap: 100px; /* Add space between the image and card */
+    padding: 20px; /* Add padding for inner spacing */
+  }
+  
+  .card1 {
+    width: 550px; /* Adjust card width as needed */
+    height: 280px;
+    border: 1px solid #d4cfcf;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 18px; /* Center text within the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth hover animation */
+  }
+  
+  .card1:hover {
+    transform: scale(1.05); /* Slightly scale up the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+  }
+  
+  .card-content1 {
+    text-align: center;
+  }
+  
+  .card1 h2 {
+    margin-bottom: 10px;
+  }
+  
+  .create-document-btn {
+    background-color: #f8f7f4; /* Example button color */
+    color: #000;
+    margin-top: 30px;
+    padding: 10px 20px;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .create-document-btn:hover {
+    background-color: #f08a2b; /* Slightly darker shade of yellow on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to make the button pop */
+  }
+  .image1 {
+    order: -1; /* This will place the image before the card1 */
+  }
+  
+  .image1 img {
+    width: 500px; /* Sets the width of the image */
+    height: 350px; /* Sets the height of the image */
+    border-radius: 10px; /* Adds rounded corners to the image */
+  }
+  
+  

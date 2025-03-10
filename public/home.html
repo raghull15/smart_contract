@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Document Chatbot</title>
+  <link rel="stylesheet" href="App.css"> <!-- CSS Styles -->
+</head>
+<body>
+  <div class="rental-guide-container">
+    <!-- Header Section -->
+    <header class="header">
+      <div class="logo">
+        <img src="/image/tvk.jpg" alt="Legal Docs Logo" />
+        <span class="logo-text">LegalDocs®</span>
+      </div>
+      <nav class="nav">
+        <a href="$" target="_blank">Home</a>
+        <a href="ContactForm.html">Contact us</a>
+        <a href="#" id="about-us-link">About us</a>
+      </nav>
+      <div class="btn" >
+        <button class="logout-btn" id="logout-button">Logout</button>
+      </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="image-container">
+        <img src="/image/tvk.jpg" alt="House Keys" class="house-keys-image" />
+      </div>
+      <div class="text-content">
+        <h1 class="title">A COMPLETE GUIDE TO RENTING OUT PROPERTY</h1>
+        <p class="description" style="margin-bottom: 30px;">
+          Finding success as a landlord starts with understanding your rights and obligations.
+          In this guide, we'll cover everything you need to know to manage your rental properties.
+        </p>
+        <div id="chat-container">
+          <div id="chat-messages">
+            <div class="message bot-message">Welcome to the Legal Document AI Chatbot!</div>
+          </div>
+          <div id="input-container">
+            <input type="text" id="user-input" placeholder="Type your message..." />
+            <button id="send-button">Generate</button>
+            <button id="upload-button">+</button>
+            <input type="file" id="file-input" style="display: none;" />
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="about-us-section">
+    <h2>About us</h2>
+    <div class="about-content">
+      <div class="legal-docs-info">
+        <img src="/legal.png" class="legal-docs-logo"  />
+        <b class="logo-text">legal docs logo</b>
+        <p>We are passionate about creating and reviewing legal documents using AI technology.</p>
+      </div>
+      <div class="contact-info">
+        <h3>Email &amp; Phone</h3>
+        <p>support@legaldocs.com</p>
+        <p>9499954629</p>
+        <p>(Mon to Fri, From 10am to 6pm)</p>
+      </div>
+      <div class="social-media">
+        <h3>Social Media</h3>
+        <p>Follow us on social media to find out the latest updates.</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/dhanushh15/" class="social-icon">
+            <img src="/instagram.png" alt="Instagram" />
+          </a>
+          <a href="#" class="social-icon">
+            <img src="/facebook.png" alt="Facebook" />
+          </a>
+          <a href="#" class="social-icon">
+            <img src="/linkedin.png" alt="LinkedIn" />
+          </a>
+          <a href="#" class="social-icon">
+            <img src="/twitter.png" alt="Twitter" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+<style>
+  .about-us-section {
+  margin-bottom: 30px;
+  background-color: #fdfdfd;
+  font-size: 18px;
+  align-items: center;
+  margin-top: 40px;
+  border: 1px solid #221d1d;
+  padding: 20px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.legal-docs-info {
+  margin-right: 20px;
+}
+
+.contact-info {
+  margin-right: 20px;
+}
+
+.legal-docs-logo {
+  width: 100px;
+}
+
+.logo-text {
+  font-size: 22px;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icon {
+  margin-right: 10px;
+}
+
+.social-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer {
+  display: flex;
+ 
+  justify-content: space-between;
+  border: 1px solid;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.footer-links a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.note {
+  font-size: 0.9em;
+  color: #555;}
+
+</style>
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms and Conditions</a>
+    </div>
+    <div class="copyright">
+      Copyright 2025 by Legaldocs.com. All Rights Reserved
+    </div>
+  </div>
+</div>
+
+  <script>
+    // JavaScript for Interactivity
+
+    // Chat Messages Array
+    const chatMessages = [
+      { text: 'Welcome to the Legal Document AI Chatbot!', sender: 'bot' },
+    ];
+
+    // References to DOM Elements
+    const chatMessagesContainer = document.getElementById('chat-messages');
+    const userInput = document.getElementById('user-input');
+    const sendButton = document.getElementById('send-button');
+    const uploadButton = document.getElementById('upload-button');
+    const fileInput = document.getElementById('file-input');
+    const aboutUsLink = document.getElementById('about-us-link');
+    const logoutButton = document.getElementById('logout-button');
+    
+
+    // Handle New Message
+    const addMessage = (text, sender) => {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
+      messageDiv.textContent = text;
+      chatMessagesContainer.appendChild(messageDiv);
+      chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight; // Auto-scroll
+    };
+
+    // Handle Send Message Button
+    sendButton.addEventListener('click', () => {
+      const messageText = userInput.value.trim();
+      if (messageText) {
+        addMessage(messageText, 'user');
+        userInput.value = ''; // Clear input
+        getBotResponse(messageText);
+      }
+    });
+
+    // Simulate Bot Response
+    const getBotResponse = (message) => {
+      const responses = {
+        hello: 'Hello! How can I help you?',
+        contract: "Sure, let's start generating your contract. What type of contract do you need?",
+      };
+      const lowerMessage = message.toLowerCase();
+      const response = responses[lowerMessage] || 'Sorry, I did not understand that.';
+      setTimeout(() => addMessage(response, 'bot'), 500);
+    };
+
+    // Handle File Upload
+    uploadButton.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        addMessage(`File uploaded: ${file.name}`, 'user');
+        console.log('Uploaded file:', file);
+      }
+    });
+
+    // Handle About Us Scrolling
+    aboutUsLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth',
+      });
+    });
+
+    // Handle Logout Button
+    logoutButton.addEventListener('click', () => {
+      alert('You have logged out.');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lease Form</title>
+    <link rel="stylesheet" href="leaseform.css">
+</head>
+<body>
+    <div class="lease-form-container">
+        <div class="top-bar">
+            <div class="top-bar-item">
+                <span class="icon">&#128187;</span> 
+                <span>Answer a few simple questions</span>
+            </div>
+            <div class="top-bar-item">
+                <span class="icon">&#9998;</span> 
+                <span>Electronic Signature Service</span>
+            </div>
+            <div class="top-bar-item">
+                <span class="icon">&#128438;</span> 
+                <span>Print and download instantly</span>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="step pending">
+                <span class="step-icon"></span>
+                <span class="step-label">General Info</span>
+                <span class="step-separator"></span>
+            </div>
+            <div class="step pending">
+                <span class="step-icon"></span>
+                <span class="step-label">Parties</span>
+                <span class="step-separator"></span>
+            </div>
+            <div class="step pending">
+                <span class="step-icon"></span>
+                <span class="step-label">Property</span>
+                <span class="step-separator"></span>
+            </div>
+            <div class="step pending">
+                <span class="step-icon"></span>
+                <span class="step-label">Terms</span>
+                <span class="step-separator"></span>
+            </div>
+            <div class="step pending">
+                <span class="step-icon"></span>
+                <span class="step-label">Costs</span>
+                <span class="step-separator"></span>
+            </div>
+            <div class="step pending">
+                <span class="step-icon"></span>
+                <span class="step-label">Clauses</span>
+                <span class="step-separator"></span>
+            </div>
+            <div class="step pending">
+                <span class="step-icon"></span>
+                <span class="step-label">Final Details</span>
+                <span class="step-separator"></span>
+            </div>
+            <div class="step pending">
+                <span class="step-icon"></span>
+                <span class="step-label">Download</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>General Info</h2>
+                <h3>Customised Lease</h3>
+                <div class="form-group">
+                    <label for="location">Location of Property:</label>
+                    <select id="location" onchange="updateNote()">
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Kerala">Kerala</option>
+                    </select>
+                </div>
+                <p class="note" id="custom-note">
+                    Different states and union territories have different rules and regulations. Your Commercial Rental Agreement will be customised for Tamil Nadu.
+                </p>
+                <p class="note">Remember the current location is Chennai, Tamil Nadu, India.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateNote() {
+            var location = document.getElementById("location").value;
+            document.getElementById("custom-note").innerText = "Different states and union territories have different rules and regulations. Your Commercial Rental Agreement will be customised for " + location + ".";
+        }
+    </script>
+</body>
+</html>
+

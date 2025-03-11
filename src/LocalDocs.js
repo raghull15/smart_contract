@@ -4,13 +4,18 @@ import './LocalDocs.css';
 function LocalDocs() {
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showSignupForm, setShowSignupForm] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isSignedUp, setIsSignedUp] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === "true");
+  const [isSignedUp, setIsSignedUp] = useState(localStorage.getItem("isSignedUp") === "true");
   const [searchQuery, setSearchQuery] = useState('');
 
   const rentOutSectionRef = useRef(null);
   const lendingmoneyRef = useRef(null);
-  const aboutUsRef = useRef(null); // Reference for "About us" section
+
+  useEffect(() => {
+    // Sync state with localStorage
+    localStorage.setItem("isLoggedIn", isLoggedIn);
+    localStorage.setItem("isSignedUp", isSignedUp);
+  }, [isLoggedIn, isSignedUp]);
 
   const handleLoginClick = () => {
     setShowLoginForm(true);
@@ -42,6 +47,8 @@ function LocalDocs() {
   const handleLogout = () => {
     setIsLoggedIn(false);
     setIsSignedUp(false);
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("isSignedUp");
   };
 
   const handleSearch = (e) => {
@@ -55,9 +62,13 @@ function LocalDocs() {
     }
   };
 
+  // ✅ Function to scroll to "About Us" section
   const scrollToAboutUs = (e) => {
     e.preventDefault();
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    window.scrollTo({
+      top: document.body.scrollHeight, // Scrolls to bottom
+      behavior: 'smooth' // Enables smooth scrolling
+    });
   };
 
   return (
@@ -68,9 +79,7 @@ function LocalDocs() {
           <span className="logo-text">Legalshield®</span>
         </div>
         <nav className="nav">
-          <a href="#" >Home</a>
-         {/* <a href="Home.html">Ai</a> */}
-
+          <a href="#">Home</a>
           <a href="ContactForm.html">Contact us</a>
           <a href="#" onClick={scrollToAboutUs}>About us</a>
         </nav>
@@ -92,8 +101,8 @@ function LocalDocs() {
         </div>
         <div className="text">
           <h1 className="title">LEGAL DOCUMENTS</h1>
-          <p className="description" style={{ marginBottom: '100px' }}>
-            Do-it-Yourself platform for making documents online. The process of creating official documentation is now made simple, quick and affordable.
+          <p className="description">
+            Do-it-Yourself platform for making documents online. The process of creating official documentation is now made simple, quick, and affordable.
           </p>
           <div className="search-bar">
             <form onSubmit={handleSearch}>
@@ -111,16 +120,14 @@ function LocalDocs() {
 
       <div ref={rentOutSectionRef} style={{ marginTop: '5px', backgroundColor: '#f9f9f9' }}></div>
       <div ref={lendingmoneyRef} style={{ marginTop: '5px', backgroundColor: '#f9f9f9' }}></div>
-      
-     
 
       {showLoginForm && (
         <div className="form-container">
           <div className="form">
             <h2>Login</h2>
             <form onSubmit={handleLoginSubmit}>
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
+              <input type="email" placeholder="Email" required />
+              <input type="password" placeholder="Password" required />
               <button type="submit" className="submit-btn">Login</button>
             </form>
             <button className="close-btn" onClick={handleCloseForm}>Close</button>
@@ -133,16 +140,19 @@ function LocalDocs() {
           <div className="form">
             <h2>Sign Up</h2>
             <form onSubmit={handleSignupSubmit}>
-              <input type="text" placeholder="Enter your name" />
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
-              <input type="password" placeholder="Confirm Password" />
+              <input type="text" placeholder="Enter your name" required />
+              <input type="email" placeholder="Email" required />
+              <input type="password" placeholder="Password" required />
+              <input type="password" placeholder="Confirm Password" required />
               <button type="submit" className="submit-btn">Sign Up</button>
             </form>
             <button className="close-btn" onClick={handleCloseForm}>Close</button>
           </div>
         </div>
       )}
+
+      {/* ✅ "About Us" Section */}
+     
     </div>
   );
 }

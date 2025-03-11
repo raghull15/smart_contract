@@ -46,9 +46,9 @@ function LocalDocs() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (searchQuery.toLowerCase() === 'documentcards') {
+    if (searchQuery.toLowerCase() === 'rent') {
       rentOutSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
-    } else if (searchQuery.toLowerCase() === 'money') {
+    } else if (searchQuery.toLowerCase() === 'property') {
       lendingmoneyRef.current?.scrollIntoView({ behavior: 'smooth' });
     } else {
       alert("No matching results found!");
@@ -64,12 +64,13 @@ function LocalDocs() {
     <div className="rental-guide-container">
       <header className="header">
         <div className="logo">
-          <img src="/image/tvk.jpg" alt="Legal Docs Logo" />
-          <span className="logo-text">LegalDocs®</span>
+          <img src="/image/legal shield.jpg" alt="Legal Docs Logo" />
+          <span className="logo-text">Legalshield®</span>
         </div>
         <nav className="nav">
           <a href="#" >Home</a>
-          <a href="Home.html">Ai</a>
+         {/* <a href="Home.html">Ai</a> */}
+
           <a href="ContactForm.html">Contact us</a>
           <a href="#" onClick={scrollToAboutUs}>About us</a>
         </nav>
@@ -87,7 +88,7 @@ function LocalDocs() {
 
       <main className="main-content">
         <div className="image-container">
-          <img src="/image/tvk.jpg" className="house-keys-image" alt="Legal Documents Illustration" />
+          <img src="/image/contract.jpg" className="house-keys-image" alt="Legal Documents Illustration" />
         </div>
         <div className="text">
           <h1 className="title">LEGAL DOCUMENTS</h1>

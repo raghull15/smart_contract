@@ -18,7 +18,7 @@ function DocumentCards() {
       </div>
 
       <div className="image">
-          <img src="/image/tvk.jpg" className="house" style={{width:'500px',height:'350px'}}/>
+          <img src="/image/rent.jpg" className="house" style={{width:'500px',height:'350px'}}/>
         </div>
       </div>
       

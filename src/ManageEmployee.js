@@ -17,7 +17,7 @@ function ManageEmployee() {
       </div>
 
       <div className="image1">
-          <img src="/image/tvk.jpg" className="house1" style={{width:'500px',height:'350px'}}/>
+          <img src="/image/employees.jpg" className="house1" style={{width:'500px',height:'350px'}}/>
         </div>
       </div>
       

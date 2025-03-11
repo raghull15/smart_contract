@@ -20,7 +20,7 @@ function Construction() {
       </div>
 
       <div className="image">
-          <img src="/image/tvk.jpg" className="house" style={{width:'500px',height:'350px'}}/>
+          <img src="/image/construction.jpg" className="house" style={{width:'500px',height:'350px'}}/>
         </div>
       </div>
       

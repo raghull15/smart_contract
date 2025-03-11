@@ -22,10 +22,12 @@
   
   .logo {
     display: flex;
+    
     align-items: center;
   }
   
   .logo img {
+    border-radius:10px;
     height: 60px;
     margin-right: 10px;
     transition: transform 0.3s ease;
@@ -81,12 +83,14 @@
   
   .image-container {
     flex: 1;
-    display: flex;
+    
+    width: 60px;
     justify-content: center;
   }
   
   .house-keys-image {
-    max-width: 350px;
+    max-width: 330px;
+    height: 460px;
     border-radius: 10px;
     transition: transform 0.3s ease;
   }

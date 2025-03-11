@@ -28,6 +28,7 @@
 
 .logo img {
   height: 60px;
+  border-radius: 10px;
   margin-right: 10px;
 }
 
@@ -68,14 +69,18 @@
 .main-content {
   text-align: center;
   margin-top: 40px;
+  max-width: 980px;
+  height: 520px;
 }
 
 .image-container {
   margin-bottom: 20px;
+  height: 520px;
+ 
 }
 
 .house-keys-image {
-  max-width: 100%;
+  width: 350px;
   height: auto;
 }
 

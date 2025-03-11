@@ -26,11 +26,12 @@
         </div>
       </div>
       <div class="e-signature-container">
-        <div class="e-signature" style="display: flex;">
-          <div style="margin-right:450px;">
+        <div class="e-signature" style="display: flex; justify-content: center; gap: 500px;">
+          <!-- Client Signature -->
+          <div style="text-align: center;">
             <h3>Client</h3>
-            <canvas id="signature-pad-1" width="400" height="200" 
-              style="border: 2px dashed black; cursor: crosshair;"
+            <canvas id="signature-pad-1" width="300" height="200" 
+              style="border: 2px dashed black; cursor: crosshair; display: block;"
               onmousedown="startDrawing1(event)"
               onmousemove="draw1(event)"
               onmouseup="stopDrawing1()"
@@ -43,10 +44,12 @@
             <img id="signature-image-1" src="" alt="Signature 1" 
               style="margin-top:20px; max-width:100%; display:none;" />
           </div>
-          <div>
+      
+          <!-- Owner Signature -->
+          <div style="text-align: center;">
             <h3>Owner</h3>
-            <canvas id="signature-pad-2" width="400" height="200" 
-              style="border: 2px dashed black; cursor: crosshair;"
+            <canvas id="signature-pad-2" width="300" height="200" 
+              style="border: 2px dashed black; cursor: crosshair; display: block;"
               onmousedown="startDrawing2(event)"
               onmousemove="draw2(event)"
               onmouseup="stopDrawing2()"
@@ -57,11 +60,11 @@
               <button id="save-button-2" onclick="saveSignature2()">Save</button>
             </div>
             <img id="signature-image-2" src="" alt="Signature 2" 
-              style="margin-top:10px; max-width:100%; display:none;" />
+              style="margin-top:20px; max-width:100%; display:none;" />
           </div>
         </div>
       </div>
-    </div>
+      
 
     <div class="download-section">
       <h2>Download</h2>
